@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "e2e:ci": "ng run yoga:e2e-ci",
-    "e2e:coverage": "cypress run & npx nyc report --reporter=lcov --reporter=text-summary",
+    "serve:coverage": "ng run yoga:serve-coverage",
+    "e2e:coverage": "ng run yoga:e2e-ci --watch=false",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },

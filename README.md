@@ -65,6 +65,9 @@ mvn test
 ```bash
 # Dans le dossier front
 npm run test
+
+# Dans le dossier front avec rapport de couverture
+npm run test:coverage
 ```
 
 ### Tests d'Intégration Backend
@@ -85,8 +88,8 @@ npm run e2e:coverage
 ## Couverture de Code
 
 ### Frontend
-- Les rapports de couverture Jest sont générés dans `front/coverage/`
-- Les rapports de couverture Cypress sont générés dans `front/coverage/cypress/`
+- Les rapports de couverture Jest sont générés dans `front/coverage/jest/lcov-report/index.html`
+- Les rapports de couverture Cypress sont générés dans `/front/coverage/lcov-report/index.html`
 
 ### Backend
 - Les rapports de couverture sont générés dans `back/target/site/jacoco/`

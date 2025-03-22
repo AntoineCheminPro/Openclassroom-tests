@@ -89,7 +89,7 @@ describe('Account page', () => {
       });
       cy.get('#meDeleteButton').click();
 
-      cy.url().should('include', 'http://localhost:4200/'); //provided that test is run with server running on port 4200...
+      cy.url().should('match', /\/$|\/$/);
       cy.get('#accountLink').should('not.exist');
     });
   });
