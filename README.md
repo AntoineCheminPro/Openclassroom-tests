@@ -7,8 +7,29 @@ Avant de commencer, assurez-vous d'avoir installé :
 - Maven
 - Node.js
 - Angular CLI
+- MySQL (version 5.7 ou supérieure)
 
 ## Installation
+
+### Base de données
+
+1. Assurez-vous que MySQL est installé et en cours d'exécution sur votre machine
+2. La base de données sera créée automatiquement au démarrage de l'application
+3. Créez un fichier `secrets.properties` dans le dossier `back/src/main/resources/` avec le contenu suivant :
+```properties
+mysql-root-pass=votre_mot_de_passe_mysql
+jwt-secret-pass=votre_clé_secrète_jwt
+```
+4. Pour initialiser la base de données avec des données de test, vous pouvez exécuter le script SQL fourni :
+```bash
+# Se connecter à MySQL et exécuter le script
+mysql -u root -p < ressources/sql/script.sql
+```
+Ce script créera :
+- Les tables nécessaires (TEACHERS, SESSIONS, USERS, PARTICIPATE)
+- Des données de test incluant :
+  - Deux professeurs de yoga
+  - Un compte administrateur (email: yoga@studio.com)
 
 ### Backend (Spring Boot)
 
@@ -32,6 +53,8 @@ cd front
 # Installer les dépendances
 npm install
 ```
+
+
 
 ## Lancement de l'application
 
