@@ -6,7 +6,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
   bail: false,
   verbose: false,
-  collectCoverage: false,
+  collectCoverage: true,
   coverageDirectory: './coverage/jest',
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/'],
@@ -24,4 +24,23 @@ module.exports = {
   moduleDirectories: [
     "node_modules"
   ],
+  collectCoverageFrom: [
+    "src/**/*.ts",
+    "!src/**/*.spec.ts",
+    "!src/test.ts",
+    "!src/environments/**/*.ts",
+    "!src/main.ts",
+    "!src/polyfills.ts",
+    "!src/app/**/*.module.ts",
+    "!src/app/**/*-routing.ts",
+    "!src/app/guards/**",
+    "!src/app/interceptors/**"
+  ],
+  coverageReporter: {
+    dir: 'coverage',
+    reporters: [
+      { type: 'html' },
+      { type: 'text-summary' }
+    ]
+  }
 };
