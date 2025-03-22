@@ -83,6 +83,13 @@ L'application est accessible sur `http://localhost:4200`
 mvn test
 ```
 
+### Tests d'Intégration Backend
+
+```bash
+# Dans le dossier back
+mvn test -Dtest=*IT
+```
+
 ### Tests Unitaires Frontend
 
 ```bash
@@ -91,13 +98,6 @@ npm run test
 
 # Dans le dossier front avec rapport de couverture
 npm run test:coverage
-```
-
-### Tests d'Intégration Backend
-
-```bash
-# Dans le dossier back
-mvn test -Dtest=*IT
 ```
 
 ### Tests End-to-End (Cypress)
